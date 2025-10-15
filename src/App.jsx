@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router";
 import HomePage from "./pages/home";
 import ListPage from "./pages/list";
+import BottlePage from "./pages/bottles";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/list" element={<ListPage />} />
+          <Route path="/bottles" element={<BottlePage />} />
+          <Route path="/location" element={< MapPage />} />
         </Routes>
       </main>
       <div class="bottom-nav">

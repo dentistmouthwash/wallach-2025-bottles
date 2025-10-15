@@ -10,6 +10,9 @@ export default function HomePage() {
       <div>
         <Link to="/list">click here for the list</Link>
       </div>
+      <div>
+        <Link to="/bottles">click here for the bottles</Link>
+      </div>
     </div>
   )
 }
