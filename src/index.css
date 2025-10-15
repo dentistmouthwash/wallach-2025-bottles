@@ -34,3 +34,13 @@ tr {
     border: 2px solid white;
     border-collapse: collapse;
 }
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.grid-1 > div {
+    margin: 1px;
+    padding: 2px;
+}
