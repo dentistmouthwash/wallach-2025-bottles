@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Link, Route, Routes } from "react-router";
 import HomePage from "./pages/home";
 import ListPage from "./pages/list";
 
@@ -12,8 +12,8 @@ function App() {
         </Routes>
       </main>
       <div class="bottom-nav">
-        <a href="/">HOME</a>
-        <a href="/list">LIST</a>
+        <Link to="/">HOME</Link>
+        <Link to="/list">LIST</Link>
         <div>MENU3</div>
       </div>
     </div>
