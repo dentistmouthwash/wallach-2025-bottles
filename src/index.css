@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.App {
+    background: skyblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-nav {
+    background: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.bottom-nav > * {
+    border: 1px solid white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
