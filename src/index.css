@@ -20,10 +20,17 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.bottom-nav > * {
+.bottom-nav>* {
     border: 1px solid white;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+table,
+td,
+tr {
+    border: 2px solid white;
+    border-collapse: collapse;
 }
