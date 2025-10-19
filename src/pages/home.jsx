@@ -11,7 +11,7 @@ export default function HomePage() {
         <Link to="/list">click here for the list</Link>
       </div>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "40vh 40vw" }}>
-        <span style={{ backgroundColor: "white", fontSize: 36 }}><Link to="/bottles" style={{ textDecoration: "none", color: "black" }}>Add some bottles?</Link></span>
+        <span class="default-span"><Link to="/bottles" style={{ textDecoration: "none", color: "black" }}>Add some bottles?</Link></span>
       </div>
     </div>
   )

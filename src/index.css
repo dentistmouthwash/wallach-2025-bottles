@@ -40,7 +40,12 @@ tr {
     grid-template-columns: 1fr auto auto;
 }
 
-.grid-1 > div {
+.grid-1>div {
     margin: 1px;
     padding: 2px;
+}
+
+.default-span {
+    background-color: white;
+    font-size: 36px;
 }
