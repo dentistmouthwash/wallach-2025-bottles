@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router";
 import HomePage from "./pages/home";
 import ListPage from "./pages/list";
 import BottlePage from "./pages/bottles";
+import MapPage from "./pages/location";
 
 function App() {
   return (
