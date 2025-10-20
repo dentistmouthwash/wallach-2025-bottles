@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bottle + recycle arrows favicon SVG
+     Simple, high-contrast icon designed for small sizes.
+     ViewBox is square (64x64) for favicon use. Save as public/favicon.svg
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Bottle recycle favicon">
+  <defs>
+    <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4FC3F7" />
+      <stop offset="100%" stop-color="#0288D1" />
+    </linearGradient>
+    <style>
+      .outline{fill:none;stroke:#0D47A1;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .fill{fill:url(#glass)}
+      .arrow{fill:none;stroke:#0D47A1;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <!-- Bottle silhouette centered -->
+  <g transform="translate(2,2) scale(0.9375)">
+    <!-- bottle body -->
+    <path class="fill" d="M32 6c-1.1 0-2 .9-2 2v4h-6c-1.7 0-3 1.3-3 3v26c0 3.3 2.7 6 6 6h10c3.3 0 6-2.7 6-6V15c0-1.7-1.3-3-3-3h-6v-4c0-1.1-.9-2-2-2z" />
+    <path class="outline" d="M32 6c-1.1 0-2 .9-2 2v4h-6c-1.7 0-3 1.3-3 3v26c0 3.3 2.7 6 6 6h10c3.3 0 6-2.7 6-6V15c0-1.7-1.3-3-3-3h-6v-4c0-1.1-.9-2-2-2z"/>
+
+    <!-- label highlight -->
+    <rect x="20" y="24" width="12" height="12" rx="2" ry="2" fill="rgba(255,255,255,0.18)" />
+  </g>
+
+  <!-- Recycle arrows wrapping bottle (three arrows forming a circle) -->
+  <g transform="translate(0,0)">
+    <!-- Arrow 1 -->
+    <path class="arrow" d="M47 11c-6.1-4.1-13.9-4.9-21-2.4C20.1 12 14 19 11 27" fill="none" />
+    <path class="arrow" d="M11 27l3-1.5v6" />
+
+    <!-- Arrow 2 -->
+    <path class="arrow" d="M53 47c4.1-6.1 4.9-13.9 2.4-21C54 20.1 47 14 39 11" fill="none" />
+    <path class="arrow" d="M39 11l1.5 3H34" />
+
+    <!-- Arrow 3 -->
+    <path class="arrow" d="M17 53c6.1 4.1 13.9 4.9 21 2.4C43.9 52 50 45 53 37" fill="none" />
+    <path class="arrow" d="M53 37l-3 1.5v-6" />
+  </g>
+</svg>
