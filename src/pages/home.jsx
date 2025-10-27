@@ -1,91 +1,70 @@
 import { Link } from "react-router";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
+  const [totalEntries, setTotalEntries] = useState(0);
+  const [totalReward, setTotalReward] = useState(0);
+  const [recentEntries, setRecentEntries] = useState([]);
+
+  // Load stats from localStorage
+  useEffect(() => {
+    const loadStats = () => {
+      const storedEntries = JSON.parse(
+        localStorage.getItem("bottleEntries") || "[]"
+      );
+      setTotalEntries(storedEntries.length);
+
+      const total = storedEntries.reduce((sum, entry) => sum + entry.reward, 0);
+      setTotalReward(total);
+
+      // Get last 3 entries for recent activity
+      setRecentEntries(storedEntries.slice(0, 3));
+    };
+
+    loadStats();
+
+    // Listen for storage changes
+    const handleStorageChange = () => {
+      loadStats();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   return (
-    <div
-      style={{
-        padding: 0,
-        margin: 0,
-        fontFamily:
-          'Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial',
-      }}
-    >
-      {/* Header with SVG and fancy title */}
-      <header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2.4rem 1rem",
-          background: "linear-gradient(90deg, #E0F7FA, #E8F3FF)",
-          boxShadow: "inset 0 -1px 0 rgba(0,0,0,0.04)",
-        }}
-      >
-        <img
-          src="/favicon.svg"
-          alt="bottle logo"
-          width={64}
-          height={64}
-          style={{ marginRight: 16 }}
-        />
-        <div style={{ textAlign: "left" }}>
-          <h1
-            style={{
-              margin: 0,
-              fontSize: 34,
-              lineHeight: 1,
-              background: "linear-gradient(90deg,#0077c2,#00bcd4)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            BottleCycle
-          </h1>
-          <p
-            style={{ margin: 0, marginTop: 6, color: "#0d47a1", opacity: 0.9 }}
-          >
-            Collect · Reuse · Recycle
+    <div className="home-container">
+      {/* Hero Section */}
+      <div className="home-hero">
+        <div className="hero-content">
+          <div className="hero-icon">♻️</div>
+          <h1 className="hero-title">EcoBottle</h1>
+          <p className="hero-subtitle">Collect · Track · Recycle</p>
+          <p className="hero-description">
+            Track your bottle recycling and earn rewards while helping the
+            environment
           </p>
         </div>
-      </header>
+      </div>
 
-      <main
-        style={{
-          minHeight: "60vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2rem",
-        }}
-      >
-        <div style={{ textAlign: "center" }}>
-          <p style={{ fontSize: 18, color: "#333", maxWidth: 560 }}>
-            Welcome to BottleCycle — a tiny experiment to track glass and
-            plastic bottles and encourage recycling. Start by adding bottles to
-            your list, or browse locations where they can be recycled.
-          </p>
-
-          <div style={{ marginTop: 24 }}>
-            <Link
-              to="/bottles"
-              style={{
-                display: "inline-block",
-                background: "linear-gradient(90deg,#0288D1,#26C6DA)",
-                color: "white",
-                padding: "10px 18px",
-                borderRadius: 8,
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-            >
-              Add some bottles
-            </Link>
+      {/* Stats Cards */}
+      <div className="stats-section">
+        <div className="stat-card">
+          <div className="stat-icon">📊</div>
+          <div className="stat-content">
+            <div className="stat-number">{totalEntries}</div>
+            <div className="stat-label">Bottles Recycled</div>
           </div>
         </div>
-      </main>
+
+        <div className="stat-card">
+          <div className="stat-icon">💰</div>
+          <div className="stat-content">
+            <div className="stat-number">${totalReward.toFixed(2)}</div>
+            <div className="stat-label">Total Earned</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

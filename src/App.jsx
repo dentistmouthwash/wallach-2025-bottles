@@ -6,19 +6,42 @@ import MapPage from "./pages/location";
 
 function App() {
   return (
-    <div class="App">
+    <div className="App">
+      {/* Top Navigation Header */}
+      <header className="top-nav">
+        <div className="nav-brand">
+          <span className="recycle-icon">♻️</span>
+          <span className="brand-text">BottleCycle</span>
+        </div>
+      </header>
+
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/list" element={<ListPage />} />
           <Route path="/bottles" element={<BottlePage />} />
-          <Route path="/location" element={< MapPage />} />
+          <Route path="/location" element={<MapPage />} />
         </Routes>
       </main>
-      <div class="bottom-nav">
-        <Link to="/">HOME</Link>
-        <Link to="/list">LIST</Link>
-        <div>MENU3</div>
+
+      {/* Bottom Navigation */}
+      <div className="bottom-nav">
+        <Link to="/" className="bottom-nav-item">
+          <span className="bottom-nav-icon">🏠</span>
+          <span className="bottom-nav-text">Home</span>
+        </Link>
+        <Link to="/bottles" className="bottom-nav-item">
+          <span className="bottom-nav-icon">🫙</span>
+          <span className="bottom-nav-text">Bottles</span>
+        </Link>
+        <Link to="/list" className="bottom-nav-item">
+          <span className="bottom-nav-icon">📋</span>
+          <span className="bottom-nav-text">List</span>
+        </Link>
+        <Link to="/location" className="bottom-nav-item">
+          <span className="bottom-nav-icon">📍</span>
+          <span className="bottom-nav-text">Locations</span>
+        </Link>
       </div>
     </div>
   );
