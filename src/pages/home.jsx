@@ -38,7 +38,7 @@ export default function HomePage() {
       <div className="home-hero">
         <div className="hero-content">
           <div className="hero-icon">♻️</div>
-          <h1 className="hero-title">EcoBottle</h1>
+          <h1 className="hero-title">BottleCycle</h1>
           <p className="hero-subtitle">Collect · Track · Recycle</p>
           <p className="hero-description">
             Track your bottle recycling and earn rewards while helping the
